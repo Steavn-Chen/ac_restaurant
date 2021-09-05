@@ -2,48 +2,76 @@ header {
   overflow: hidden;
 }
 
-.navbar .navbar-brand {
-  color: #4592af;
+.title-image {
+  transition: all 1.5s ease;
 }
 
-.navbar .navbar-brand:hover {
-  color: #226089;
+.title-image:hover {
+  transform: scale(1.1);
 }
 
-.banner {
-  position: relative;
-  z-index: -1;
-  margin: -5px;
-  height: 360px;
-  background: #dddddd center center
-    url("https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg");
+.title-image {
+  border: 5px black;
+  width: 100%;
+  height: 380px;
+  background: 
+  /* center center
+    url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80"); */
+    /* center center */ url("https://www.daisyyohoho.com/wp-content/uploads/2019/09/201909food-79.jpg");
   background-size: cover;
-  filter: blur(3px);
+  /* filter: blur(30px); */
 }
 
-.search-bar .search-bar-outer {
-  margin: 0 auto;
-  max-width: 680px;
-  background-color: #fce2cf;
-  border-radius: 8px;
-  padding: 20px 30px;
-  border: 0;
-  margin-top: -60px;
+.nav-title {
+  color: #f77308;
+  font-size: 25px;
+  font-family: "Merienda", cursive;
+}
+.nav-title:hover {
+  color: #f77308;
+  text-decoration: none;
+}
+
+/* footer */
+.footer {
+  background-color: rgb(247, 136, 211);
+  margin-top: 30px;
+  width: 100%;
+  padding: 20px;
+  font-size: 20px;
+  color: rgb(92, 92, 221);
+}
+.footer-logo {
+  width: 50px;
+}
+
+.search-bar {
+  position: relative;
+  margin: auto;
+  width: 35%;
+  max-height: 250px;
+  margin-top: -260px;
+  right: 30%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(192, 184, 184, 0.7);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  /* border: 0; */
 }
 
-.search-bar .search-bar-inner h4 {
-  color: #9b4b4b;
+.search-title {
+  color: #f77308;
+  font-size: 25px;
+  font-family: "Merienda", cursive;
+}
+
+.fa-search {
+  color: white;
 }
 
 .form-control::placeholder {
   color: #aaaaaa;
   font-size: 0.8rem;
-}
-
-.btn-major {
-  background-color: #9b4b4b;
-  color: white;
 }
 
 .form-control:focus {
@@ -52,13 +80,28 @@ header {
 }
 
 .card {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  /* margin-top: 2em; */
+  border-radius: 15px;
+  box-shadow: 3px 3px 10px;
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); */
 }
 
 .card img {
   height: 180px;
 }
 
+.inner {
+  overflow: hidden;
+}
+
+.inner img {
+  transition: all 1.5s ease;
+}
+
+.inner:hover img {
+  transform: scale(1.1);
+}
 .card-title {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -79,6 +122,10 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.show-info {
+  text-align: center;
+}
+
 @media screen and (max-width: 992px) {
   .card img {
     height: 115px;
@@ -88,6 +135,19 @@ header {
 @media screen and (max-width: 768px) {
   .restaurant-show-title {
     font-size: 2rem;
+  }
+
+  .search-bar {
+    position: static;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: rgba(192, 195, 192, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  .search-title {
+    font-size: 25px;
   }
 }
 
