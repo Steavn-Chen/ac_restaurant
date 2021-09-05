@@ -14,7 +14,7 @@
 
 - 將專案 clone 到本地端
 
-https://github.com/ashley5233/restaurant-list-v1.git
+https://github.com/Steavn-Chen/test_retaurant
 
 - 進入到專案資料夾
 
