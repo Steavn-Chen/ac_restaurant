@@ -3,7 +3,7 @@
 使用 Node.js hdr Express 制作一個餐廳美食網站，這專案能夠使用搜索功能來尋找餐廳
 並且點擊餐廳圖片能看到各餐廳的詳細資訊。
 
-![restaurant-image](https://github.com/ashley5233/restaurant-list-v1/blob/master/restaurant-image.png?raw=true)
+![restaurant-image](https://github.com/Steavn-Chen/test_retaurant/blob/main/restaurant.PNG)
 
 ## 功能表單
 
