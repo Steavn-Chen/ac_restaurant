@@ -154,6 +154,25 @@ header {
   text-align: center;
 }
 
+.new-page{
+  /* border:1px red solid; */
+  background-color: rgb(247, 235, 235);
+  width: 50%;
+  /* height: 60%; */
+  margin: 0 auto;
+  margin-top: 60px;
+  border-radius: 30px;
+  padding: 20px;
+  font-family: "Merienda", cursive;
+  font-size: 1.3em;
+}
+.new-title {
+  /* display: flex;
+  justify-content: center; */
+  text-align: center;
+  padding: 15px;
+}
+
 @media screen and (max-width: 992px) {
   .card img {
     height: 115px;
