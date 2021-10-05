@@ -4,7 +4,7 @@ const restaurantList = require("./restaurant.json");
 const mongoose = require('mongoose')
 const app = express();
 
-const port = 3000;
+const port = 3100;
 
 mongoose.connect('mongodb://localhost/restaurant-list-n1', { useNewUrlParser: true, useUnifiedTopology: true })
 
