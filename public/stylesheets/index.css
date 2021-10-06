@@ -173,6 +173,73 @@ header {
   padding: 15px;
 }
 
+ .showOutPage {
+  /* border:1px red solid; */
+  height: 200px;
+  text-align: center;
+  margin-top: 3%;
+  padding: 20px;
+}
+.showOutPage .fa-exclamation-circle {
+  font-size: 100px;
+  color: red;
+}
+
+.showOutPage h1{
+  margin-top: 10px;
+}
+
+
+#index-fileBtn, #index-editBtn  {
+  background-color: rgba(117, 182, 247, 0.4);
+  color:whitesmoke;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  font-family: "Merienda", cursive;
+  /* border:1px red solid; */
+}
+
+
+#index-fileBtn:hover, #index-editBtn:hover,#btn-edit:hover, #btn-delete:hover  {
+  background-color: rgb(40, 133, 255);
+  color:whitesmoke;
+  text-decoration: none;
+}
+
+.fa-file-alt, .fa-edit, .fa-trash{
+  font-size: 20px;
+}
+
+.index-FormBtn ,.index-aBtn{
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 5px;
+  /* border: 1px red solid; */
+}
+
+#btn-edit, #btn-delete {
+  border: none;
+  background-color: rgba(117, 182, 247, 0.4);
+  color:whitesmoke;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  font-family: "Merienda", cursive;
+   /* border:1px red solid; */
+  
+}
+
+#editBtn-Back, #newBtn-back{
+  padding: 8px 14px ;
+  font-size: 15px;
+  /* border: 1px blue solid; */
+  text-decoration: none;
+  background:#ee5151;
+  color: #f5f5f5;
+  border-radius: 5px;
+  margin-left: 5px;
+}
 @media screen and (max-width: 992px) {
   .card img {
     height: 115px;
