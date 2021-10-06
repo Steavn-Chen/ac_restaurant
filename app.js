@@ -101,30 +101,40 @@ app.get("/restaurants/:restaurant_id/edit", (req, res) => {
 app.post("/restaurants/:restaurant_id/edit", (req, res) => {
   const id = req.params.restaurant_id;
   const body = req.body
-  // console.log(body)
-  const { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
+
+  // 第一種寫法解購函式
+  // const { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
+  // return Restaurant.findById(id)
+  // .then(restaurant => {
+  //   restaurant.name = name,
+  //   restaurant.name_en = name_en,
+  //   restaurant.category = category,
+  //   restaurant.image = image,
+  //   restaurant.location = location,
+  //   restaurant.phone = phone,
+  //   restaurant.google_map = google_map,
+  //   restaurant.rating = rating,
+  //   restaurant.description = description
+  //   return restaurant.save() 
+  // })
+
+  // 第二種物件合併
   return Restaurant.findById(id)
-  // .lean()
-  .then(restaurant => {
-    restaurant.name = name,
-    restaurant.name_en = name_en,
-    restaurant.category = category,
-    restaurant.image = image,
-    restaurant.location = location,
-    restaurant.phone = phone,
-    restaurant.google_map = google_map,
-    restaurant.rating = rating,
-    restaurant.description = description
-    return restaurant.save()
-    // console.log(restaurant.name)
-    // res.render('edit',{ restaurant })
+  .then(restaurant=> { 
+      Object.assign(restaurant,body).save() 
   })
-  .then(restaurant => {
-    // console.log(restaurant)
-    res.redirect(`/restaurants/${id}/edit`)
-  })
+  .then(()=> res.redirect(`/restaurants/${id}/edit`))
   .catch(error => console.log(error))
 });
+
+app.post('/restaurants/:restaurant_id/delete', (req, res)=> {
+  const id = req.params.restaurant_id
+  console.log(id)
+  Restaurant.findById(id)
+  .then(restaurant => restaurant.remove())
+  .then(() => res.redirect('/'))
+  .catch(error => console.log(error)) 
+})
 
 app.listen(port, () => {
   console.log(`Express is running on http://locahost:${port}`);

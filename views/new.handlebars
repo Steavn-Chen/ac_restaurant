@@ -25,7 +25,7 @@
           class="form-control"
           name="category"
           id="category"
-          value="{{restaurant.category}}" required />
+          value="{{restaurant.category}}" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" required />
         <datalist id="categories">
           <option>中東料理</option>
           <option>日本料理</option>
