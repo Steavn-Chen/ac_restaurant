@@ -240,6 +240,11 @@ header {
   border-radius: 5px;
   margin-left: 5px;
 }
+
+#editBtn-Back:hover, #newBtn-back:hover{
+  background-color: #b12828;
+}
+
 @media screen and (max-width: 992px) {
   .card img {
     height: 115px;

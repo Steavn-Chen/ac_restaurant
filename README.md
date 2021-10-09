@@ -7,10 +7,16 @@
 
 ## 功能表單
 
+  ### <1.0 版>
+
 - 透過餐廳名稱或類別搜尋
 - 顥示餐廳詳細資料包括類別、地址、電話、評、分圖片等資訊。
 
-##啓動方
+  ### <2.0 版>
+
+- 針對 CRUD 的功能，可以新增一筆資料，也可以刪除、修改。
+
+## 啓動方式
 
 - 將專案 clone 到本地端
 
@@ -30,8 +36,14 @@ nodemon app.js
 
 Express is running on http://locahost:3000
 
+出現 mongodb is connected! ，代表 mongodb 資料庫連接成功
+
+- 在終端機輸入 npm run seed
+  看到 mongodb is connected! done! 種子資料建立成功
+
 ## 開發環境
 
 - Node.js -v10.15.0
 - Express -4.17.1
 - Express-Handlebars-5.3.3
+- mongoose 5.12.9

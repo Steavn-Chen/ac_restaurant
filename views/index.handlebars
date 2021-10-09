@@ -65,14 +65,14 @@
           <div class="card-footer text-muted ">
             <a href="/restaurants/{{ this._id }}" id="index-fileBtn" class="index-aBtn"><i class="far fa-file-alt " ></i>
               file</a>
-            <a href="/restaurants/{{ this._id }}/edit" id="index-editBtn" class="index-aBtn"><i
-                class="far fa-edit"></i></a>
+            {{!-- <a href="/restaurants/{{ this._id }}/edit" id="index-editBtn" class="index-aBtn"><i
+                class="far fa-edit"></i></a> --}}
 
             <form action="/restaurants/{{ this._id }}/edit" method="GET" class="index-FormBtn">
               <button type="submit" id="btn-edit" id="index-editBtn" class="fa"><i class="far fa-edit"></i></button>
             </form>
 
-            <form action="/restaurants/{{ this._id }}/delete" method="POST" class="index-FormBtn">
+            <form action="/restaurants/{{ this._id }}?_method=DELETE" method="POST" class="index-FormBtn">
               <button type="submit" id="btn-delete" id="index-deleteBtn"><i class="fas fa-trash"></i></button>
             </form>
 
