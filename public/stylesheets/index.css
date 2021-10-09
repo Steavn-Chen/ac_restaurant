@@ -245,6 +245,12 @@ header {
   background-color: #b12828;
 }
 
+.changList {
+  border: 1px red solid;
+  display: flex;
+  justify-content: flex-end;
+}
+
 @media screen and (max-width: 992px) {
   .card img {
     height: 115px;
