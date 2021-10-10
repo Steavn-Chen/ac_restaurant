@@ -34,7 +34,7 @@ header {
 
 /* footer */
 .footer {
-  background-color: rgb(252, 159, 122);
+  background-color: rgb(247, 136, 211);
   margin-top: 30px;
   width: 100%;
   padding: 20px;
@@ -154,7 +154,7 @@ header {
   text-align: center;
 }
 
-.new-page, .edit-page{
+.new-page{
   /* border:1px red solid; */
   background-color: rgb(247, 235, 235);
   width: 50%;
@@ -189,8 +189,19 @@ header {
   margin-top: 10px;
 }
 
-#index-fileBtn:hover, #index-editBtn:hover,
-#index-deleteBtn:hover, #btn-edit:hover, #btn-delete:hover  {
+
+#index-fileBtn, #index-editBtn  {
+  background-color: rgba(117, 182, 247, 0.4);
+  color:whitesmoke;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  font-family: "Merienda", cursive;
+  /* border:1px red solid; */
+}
+
+
+#index-fileBtn:hover, #index-editBtn:hover,#btn-edit:hover, #btn-delete:hover  {
   background-color: rgb(40, 133, 255);
   color:whitesmoke;
   text-decoration: none;
@@ -207,7 +218,7 @@ header {
   /* border: 1px red solid; */
 }
 
-#index-fileBtn, #index-editBtn, #index-deleteBtn {
+#btn-edit, #btn-delete {
   border: none;
   background-color: rgba(117, 182, 247, 0.4);
   color:whitesmoke;
@@ -215,9 +226,9 @@ header {
   font-size: 15px;
   border-radius: 10px;
   font-family: "Merienda", cursive;
-  /* border:1px red solid; */
+   /* border:1px red solid; */
+  
 }
-
 
 #editBtn-Back, #newBtn-back{
   padding: 8px 14px ;
@@ -234,65 +245,15 @@ header {
   background-color: #b12828;
 }
 
-.changLIst {
-  /* border:1px blue solid; */
+.changList {
+  border: 1px red solid;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  margin-top: 50px;
-  /* max-width: 20px; */
-  /* min-width: 100px; */
-  /* width:1200px; */
-  /* margin-right: -100px; */
- 
 }
-
-.changList .fa-th, .changList .fa-list {
-  padding: 10px;
-  color: #f7b986;
-}
-
-.changList .fa-th:hover, .changList .fa-list:hover {
-  padding: 10px;
-  color: #f77308;
-}
-
-#dropdownMenuLink {
-  border: 1px #f77308 solid;
-  color: #f77308;
-   /* outline-color: #f77308; */
-   /* background-color: aqua; */
-}
-
-#dropdownMenuLink:hover {
-  /* border: 1px #f77308 solid; */
-  color:blanchedalmond;
-   /* outline-color: #f77308; */
-   background-color: #f77308;
-}
-
-.dropdown-item:hover {
-  background-color: #f77308;
-}
-
-.listThead {
-  text-align: center;
-}
-
-.listTbodyValue {
-  line-height: 55px;
-  text-align: center;
-} 
 
 @media screen and (max-width: 992px) {
   .card img {
     height: 115px;
-  }
-  .new-page, .edit-page {
-    width: 100%;
-  }
-  .listBtn {
-    /* max-width: 100%; */
   }
 }
 
