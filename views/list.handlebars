@@ -1,0 +1,74 @@
+<!-- search bar -->
+<div class="container search-bar">
+  <div class="search-bar-outer">
+    <div class="search-bar-inner">
+      <form action="/search">
+        <div class="search-title">Search Your Restaurant!</div>
+        <div class="input-group">
+          <input type="text" name="keyword" class="form-control" placeholder="Enter restaurant name to search..."
+            aria-label="Restaurant Name..." value="{{keyword}}" aria-describedby="search-button" />
+          <div class="input-group-append">
+            <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="changList">
+    <a href="/"><i class="fas fa-th fa-2x"></i></a>
+    <a href="/list"><i class="fas fa-list fa-2x"></i></a>
+    <div class="dropdown ml-2">
+      <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        請選擇
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="/sort/list/name/asc">名稱 A-Z</a>
+        <a class="dropdown-item" href="/sort/list/name/desc">名稱 Z-A</a>
+        <a class="dropdown-item" href="/sort/list/category/asc">類別 A-Z</a>
+        <a class="dropdown-item" href="/sort/list/category/desc">類別 Z-A</a>
+        <a class="dropdown-item" href="/sort/list/rating/desc">評分由大至小</a>
+        <a class="dropdown-item" href="/sort/list/rating/asc">評分由小至大</a>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr class="listThadValue">
+        {{! <th scope="col" class="listTheadName">餐廳名稱</th>
+        <th scope="col" class="listTheadCategory">餐廳類型</th>
+        <th scope="col" class="listTheadRating">餐廳評比</th>
+        <th scope="col" class="table-btn">各種方式</th> }}
+        <th class="listThead">餐廳名稱</th>
+        <th class="listThead">餐廳類型</th>
+        <th class="listThead">餐廳評比</th>
+        <th class="listThead">各種方式</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each restaurants}}
+      <tr class="listTbody">
+        <td class="listTbodyValue">{{this.name}}</td>
+        <td class="listTbodyValue">{{this.category}}</td>
+        <td class="listTbodyValue">{{this.rating}}</td>
+        <td>
+          <a href="/restaurants/{{this._id}}" id="index-fileBtn" class="index-aBtn"><i class="far fa-file-alt"></i>
+            file</a>
+
+          <form action="/restaurants/{{this._id}}/edit" method="GET" class="index-FormBtn">
+            <button type="submit" class=" btn-edit" id="index-editBtn" class="fa"><i class="far fa-edit"></i></button>
+          </form>
+
+          <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST" class="index-FormBtn">
+            <button type="submit" class=" btn-delete" id="index-deleteBtn"><i class="fas fa-trash"></i></button>
+          </form>
+
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

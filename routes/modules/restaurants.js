@@ -14,34 +14,32 @@ router.post('/new', (req, res) => {
   // res.render('new')
 })
 
-router.get("/:restaurant_id", (req, res) => {
-  const id = req.params.restaurant_id;
+router.get('/:restaurant_id', (req, res) => {
+  const id = req.params.restaurant_id
   Restaurant.findById(id)
   .lean()
-  .then(restaurant => res.render('show',{restaurant}))
+  .then(restaurant => res.render('show', { restaurant }))
   .catch(error => console.log(error))
-   
   // const restaurant = restaurantList.results.find((item) => {
   //   return item.id.toString() === restaurant_id;
   // });
   // res.render("show", { restaurant: restaurant });
-});
+})
 
-router.get("/:restaurant_id/edit", (req, res) => {
-  const id = req.params.restaurant_id;
+router.get('/:restaurant_id/edit', (req, res) => {
+  const id = req.params.restaurant_id
   Restaurant.findById(id)
   .lean()
-  .then(restaurant => res.render('edit',{restaurant}))
+  .then(restaurant => res.render('edit', { restaurant }))
   .catch(error => console.log(error))
-   
   // const restaurant = restaurantList.results.find((item) => {
   //   return item.id.toString() === restaurant_id;
   // });
   // res.render("show", { restaurant: restaurant });
-});
+})
 
-router.put("/:restaurant_id", (req, res) => {
-  const id = req.params.restaurant_id;
+router.put('/:restaurant_id', (req, res) => {
+  const id = req.params.restaurant_id
   const body = req.body
 
   // 第一種寫法解購函式
@@ -57,25 +55,25 @@ router.put("/:restaurant_id", (req, res) => {
   //   restaurant.google_map = google_map,
   //   restaurant.rating = rating,
   //   restaurant.description = description
-  //   return restaurant.save() 
+  //   return restaurant.save()
   // })
 
   // 第二種物件合併
   return Restaurant.findById(id)
-  .then(restaurant=> { 
-      Object.assign(restaurant,body).save() 
+  .then(restaurant => {
+      Object.assign(restaurant, body).save()
   })
-  .then(()=> res.redirect(`/restaurants/${id}/edit`))
+  .then(() => res.redirect(`/restaurants/${id}/edit`))
   .catch(error => console.log(error))
-});
+})
 
-router.delete('/:restaurant_id', (req, res)=> {
+router.delete('/:restaurant_id', (req, res) => {
   const id = req.params.restaurant_id
   console.log(id)
   Restaurant.findById(id)
   .then(restaurant => restaurant.remove())
   .then(() => res.redirect('/'))
-  .catch(error => console.log(error)) 
+  .catch(error => console.log(error))
 })
 
 module.exports = router

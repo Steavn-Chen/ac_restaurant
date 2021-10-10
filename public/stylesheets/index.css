@@ -190,7 +190,8 @@ header {
 }
 
 
-#index-fileBtn, #index-editBtn  {
+#index-fileBtn, #index-editBtn, #index-deleteBtn {
+  /* outline: none; */
   background-color: rgba(117, 182, 247, 0.4);
   color:whitesmoke;
   padding: 10px;
@@ -200,8 +201,11 @@ header {
   /* border:1px red solid; */
 }
 
+#index-editBtn, #index-deleteBtn {
+  border:none;
+}
 
-#index-fileBtn:hover, #index-editBtn:hover,#btn-edit:hover, #btn-delete:hover  {
+#index-fileBtn:hover, #index-editBtn:hover,#index-deleteBtn:hover  {
   background-color: rgb(40, 133, 255);
   color:whitesmoke;
   text-decoration: none;
@@ -216,18 +220,6 @@ header {
   margin-top: 10px;
   margin-left: 5px;
   /* border: 1px red solid; */
-}
-
-#btn-edit, #btn-delete {
-  border: none;
-  background-color: rgba(117, 182, 247, 0.4);
-  color:whitesmoke;
-  padding: 10px;
-  font-size: 15px;
-  border-radius: 10px;
-  font-family: "Merienda", cursive;
-   /* border:1px red solid; */
-  
 }
 
 #editBtn-Back, #newBtn-back{
@@ -245,10 +237,40 @@ header {
   background-color: #b12828;
 }
 
+.listTbody, .listThadValue {
+  text-align: center;
+}
+
+.listTbodyValue {
+  line-height: 60px;
+}
+
 .changList {
-  border: 1px red solid;
+  /* border: 1px red solid; */
   display: flex;
   justify-content: flex-end;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.changList .fa-th, .changList .fa-list {
+  color: #f0b88a;
+  margin-right: 10px;
+}
+
+.changList .fa-th:hover, .changList .fa-list:hover {
+  color: #f77308;
+}
+
+#dropdownMenuLink {
+  border:1px solid #f77308;
+  color:#f77308;
+}
+
+#dropdownMenuLink:hover {
+  background-color: #f77308;
+  color:blanchedalmond;
 }
 
 @media screen and (max-width: 992px) {
