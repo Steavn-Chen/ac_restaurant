@@ -24,11 +24,18 @@
       <nav class="navbar">
         <div class="container">
           <a class="nav-title" href="/">
+          {{#if isAuthenticated}}{{ user.name }}`s {{/if}}
             <i class="fas fa-coffee"></i>
             Cafes and Restaurants
             <i class="fas fa-utensils"></i>
           </a>
-          <a href="/restaurants/new" ><button id="navbar-searchBtn" class="btn"><i class="fas fa-plus-circle"></i>  Add Restaurant</button></a>
+          {{!-- <a href="/restaurants/new" ><button id="navbar-searchBtn" class="btn"><i class="fas fa-plus-circle"></i>  Add Restaurant</button></a> --}}
+
+          {{#if isAuthenticated}}
+          <a href="/users/logout" > <button id="navbar-logoutBtn" class="btn"><span class="mr-2">Logout</span><i class="fas fa-sign-out-alt "></i></button></a>
+          {{else}}
+          <a href="/users/login" > <button id="navbar-loginBtn" class="btn"><span class="mr-2">Login</span><i class="fas fa-sign-in-alt "></i></button></a>
+          {{/if}}
          </div>
 
       </nav>

@@ -5,8 +5,9 @@
       <form action="/search">
         <div class="search-title">Search Your Restaurant!</div>
         <div class="input-group">
-          <input type="text" name="keyword" class="form-control search-formControl" placeholder="Enter restaurant name to search..."
-            aria-label="Restaurant Name..." value="{{keyword}}" aria-describedby="search-button" />
+          <input type="text" name="keyword" class="form-control search-formControl"
+            placeholder="Enter restaurant name to search..." aria-label="Restaurant Name..." value="{{keyword}}"
+            aria-describedby="search-button" />
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
@@ -18,21 +19,27 @@
 
 <!-- restaurant list -->
 <div class="container mt-5">
-  <div class="changList">
-    <a href="/"><i class="fas fa-th fa-2x"></i></a>
-    <a href="/list"><i class="fas fa-list fa-2x"></i></a>
-    <div class="dropdown ml-2">
-      <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        請選擇
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="/sort/name/asc">名稱 A-Z</a>
-        <a class="dropdown-item" href="/sort/name/desc">名稱 Z-A</a>
-        <a class="dropdown-item" href="/sort/category/asc">類別 A-Z</a>
-        <a class="dropdown-item" href="/sort/category/desc">類別 Z-A</a>
-        <a class="dropdown-item" href="/sort/rating/desc">評分由大至小</a>
-        <a class="dropdown-item" href="/sort/rating/asc">評分由小至大</a>
+  <div class="chang changItem d-flex justify-content-between align-item-center">
+    <div class="item-left ">
+      <a href="/restaurants/new"><button id="navbar-searchBtn" class="btn"><i class="fas fa-plus-circle"></i> Add
+          Restaurant</button></a>
+    </div>
+    <div class="item-right " >
+      <a href="/"><i class="fas fa-th fa-2x"></i></a>
+      <a href="/list"><i class="fas fa-list fa-2x"></i></a>
+      <div class="dropdown ml-2">
+        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          請選擇
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="/sort/name/asc">名稱 A-Z</a>
+          <a class="dropdown-item" href="/sort/name/desc">名稱 Z-A</a>
+          <a class="dropdown-item" href="/sort/category/asc">類別 A-Z</a>
+          <a class="dropdown-item" href="/sort/category/desc">類別 Z-A</a>
+          <a class="dropdown-item" href="/sort/rating/desc">評分由大至小</a>
+          <a class="dropdown-item" href="/sort/rating/asc">評分由小至大</a>
+        </div>
       </div>
     </div>
   </div>
@@ -45,7 +52,7 @@
             <div class="inner">
               <img class="card-img-top" src="{{this.image}}" alt="圖片失效" />
           </a>
-            </div>
+        </div>
         <div class="card-body p-3">
           <h6 class="card-title mb-1">{{this.name}}</h6>
 
