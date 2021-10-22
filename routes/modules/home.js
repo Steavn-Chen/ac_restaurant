@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
   .sort({ _id: 'asc' })
   .then(restaurants => res.render('index', { restaurants }))
   .catch(error => console.log(error))
-  // res.render("index", { restaurants: restaurantList.results });
 })
 
 module.exports = router
