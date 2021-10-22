@@ -2,7 +2,23 @@
 <div class="container show-info">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
+     <div class="show-btn d-flex justify-content-end">
 
+          <form action="/restaurants/{{ restaurant._id }}/edit" method="GET" class="index-FormBtn">
+            <button type="submit" id="index-editBtn" class="fa"><i class="far fa-edit"></i></button>
+          </form>
+
+          <form action="/restaurants/{{ restaurant._id }}?_method=DELETE" method="POST" class="index-FormBtn">
+            <button type="submit" id="index-deleteBtn"><i class="fas fa-trash"></i></button>
+          </form>
+
+          {{!-- <a href="/" class="btn btn-primary text-align-center"><i class="fas fa-home"></i></a> --}}
+          <button class="btn "><a href="/" id="show-homeBtn" class="show-Btn "><i class="fas fa-home "></i></a></button>
+           {{!-- <a href="/" id="index-fileBtn" class="index-aBtn"><i class="fas fa-home"></i></a> --}}
+
+          {{!-- <a href="/restaurants/{{ this._id }}" id="index-fileBtn" class="index-aBtn"><i class="far fa-file-alt "></i>
+            file</a> --}}
+     </div>
       <p class="mb-1">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>
