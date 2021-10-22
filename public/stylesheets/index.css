@@ -1,5 +1,5 @@
 body {
-  background-color:rgb(253, 242, 227);
+  background-color: rgb(253, 242, 227);
 }
 header {
   overflow: hidden;
@@ -87,22 +87,22 @@ header {
 }
 
 #navbar-searchBtn {
-  font-family: "Merienda", cursive; 
+  font-family: "Merienda", cursive;
   color: #f5f5f5;
-  background-color:#f77308;
-  text-decoration:none ;
+  background-color: #f77308;
+  text-decoration: none;
 }
 
 .fa-search {
   color: white;
 }
 
-.form-control::placeholder {
+.search-formControl::placeholder {
   color: #aaaaaa;
   font-size: 0.8rem;
 }
 
-.form-control:focus {
+.search-formControl:focus {
   box-shadow: none;
   border-color: #ced4da;
 }
@@ -154,7 +154,8 @@ header {
   text-align: center;
 }
 
-.new-page, .edit-page {
+.new-page,
+.edit-page {
   /* border:1px red solid; */
   background-color: rgb(247, 235, 235);
   width: 50%;
@@ -174,7 +175,7 @@ header {
   padding: 15px;
 }
 
- .showOutPage {
+.showOutPage {
   /* border:1px red solid; */
   height: 200px;
   text-align: center;
@@ -186,15 +187,16 @@ header {
   color: red;
 }
 
-.showOutPage h1{
+.showOutPage h1 {
   margin-top: 10px;
 }
 
-
-#index-fileBtn, #index-editBtn, #index-deleteBtn {
+#index-fileBtn,
+#index-editBtn,
+#index-deleteBtn {
   /* outline: none; */
   background-color: rgba(117, 182, 247, 0.4);
-  color:whitesmoke;
+  color: whitesmoke;
   padding: 10px;
   font-size: 15px;
   border-radius: 10px;
@@ -202,43 +204,52 @@ header {
   /* border:1px red solid; */
 }
 
-#index-editBtn, #index-deleteBtn {
-  border:none;
+#index-editBtn,
+#index-deleteBtn {
+  border: none;
 }
 
-#index-fileBtn:hover, #index-editBtn:hover,#index-deleteBtn:hover  {
+#index-fileBtn:hover,
+#index-editBtn:hover,
+#index-deleteBtn:hover {
   background-color: rgb(40, 133, 255);
-  color:whitesmoke;
+  color: whitesmoke;
   text-decoration: none;
 }
 
-.fa-file-alt, .fa-edit, .fa-trash{
+.fa-file-alt,
+.fa-edit,
+.fa-trash {
   font-size: 20px;
 }
 
-.index-FormBtn ,.index-aBtn{
+.index-FormBtn,
+.index-aBtn {
   display: inline-block;
   margin-top: 10px;
   margin-left: 5px;
   /* border: 1px red solid; */
 }
 
-#editBtn-Back, #newBtn-back{
-  padding: 8px 14px ;
+#editBtn-Back,
+#newBtn-back {
+  padding: 8px 14px;
   font-size: 15px;
   /* border: 1px blue solid; */
   text-decoration: none;
-  background:#ee5151;
+  background: #ee5151;
   color: #f5f5f5;
   border-radius: 5px;
   margin-left: 5px;
 }
 
-#editBtn-Back:hover, #newBtn-back:hover{
+#editBtn-Back:hover,
+#newBtn-back:hover {
   background-color: #b12828;
 }
 
-.listTbody, .listThadValue {
+.listTbody,
+.listThadValue {
   text-align: center;
 }
 
@@ -255,30 +266,44 @@ header {
   align-items: center;
 }
 
-.changList .fa-th, .changList .fa-list {
+.changList .fa-th,
+.changList .fa-list {
   color: #f0b88a;
   margin-right: 10px;
 }
 
-.changList .fa-th:hover, .changList .fa-list:hover {
+.changList .fa-th:hover,
+.changList .fa-list:hover {
   color: #f77308;
 }
 
 #dropdownMenuLink {
-  border:1px solid #f77308;
-  color:#f77308;
+  border: 1px solid #f77308;
+  color: #f77308;
 }
 
 #dropdownMenuLink:hover {
   background-color: #f77308;
-  color:blanchedalmond;
+  color: blanchedalmond;
 }
 
-.login .register-button {
+.login .login-button , .register .register-button {
   color: #f77308;
   outline: antiquewhite;
   border-bottom: 5px rgb(255, 153, 0) double;
   text-decoration: none;
+}
+
+.login .login-formControl:focus, .register .register-formControl:focus{
+  box-shadow: none;
+  border: none; 
+  box-shadow: 0px 0px 10px #06c3fc;
+  border: 1px #2ae3fc solid; 
+}
+
+.login .login-formControl::placeholder, .register .register-formControl::placeholder {
+  color: sliver;
+  font-size: 1.1em;
 }
 
 @media screen and (max-width: 992px) {
