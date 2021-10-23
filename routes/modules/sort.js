@@ -4,9 +4,10 @@ const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
 router.get('/:type/:method', (req, res) => {
+  const userId = req.user._id
   const type = req.params.type
   const method = req.params.method
-  Restaurant.find()
+  Restaurant.find({ userId })
     .lean()
     .sort({ [type]: method })
     .then(restaurants => res.render('index', { restaurants }))
@@ -14,10 +15,10 @@ router.get('/:type/:method', (req, res) => {
 })
 
 router.get('/list/:type/:method', (req, res) => {
+  const userId = req.user._id
   const { type, method } = req.params
   const result = { [type]: method }
-  console.log(type, typeof type, [type], typeof [type], result)
-  Restaurant.find()
+  Restaurant.find({ userId })
   .lean()
   .sort(result)
   // .sort({ [type]: method})

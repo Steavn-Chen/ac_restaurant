@@ -6,14 +6,17 @@ module.exports = app => {
   app.use(passport.initialize())
   app.use(passport.session())
 
-  passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
+  passport.use(new LocalStrategy({ 
+    usernameField: 'email',
+    passReqToCallback: true 
+  }, (req, email, password, done) => {
     User.findOne({ email })
     .then(user => {
       if (!user) {
-        return done(null, false, { message: '此帳號不存在'})
+        return done(null, false, req.flash('loginCheck_msg', '此帳號不存在'))
       }
       if (user.password !== password) {
-        return done(null, false, { message: '密碼與確認密碼不相符'})
+        return done(null, false, req.flash('loginCheck_msg', '密碼與確認密碼不相符'))
       }
       return done(null, user)
      })
