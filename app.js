@@ -2,14 +2,14 @@ const express = require('express');
 const session = require('express-session')
 const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser')
-const methodOverride = require('method-override')
 const flash = require('connect-flash')
+const methodOverride = require('method-override')
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
 const routes = require('./routes/index')
-
 const userPassport = require('./config/passport')
 require('./config/mongoose')
 
