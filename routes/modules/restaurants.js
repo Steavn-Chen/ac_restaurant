@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router()
-
 const Restaurant = require('../../models/restaurant')
-const User = require('../../models/user')
 
 router.get('/new', (req, res) => {
   res.render('new')
@@ -19,7 +17,7 @@ router.post('/new', (req, res) => {
 router.get('/:restaurant_id', (req, res) => {
   const userId = req.user._id
   const _id = req.params.restaurant_id
-  return  Restaurant.findOne({ _id, userId })
+  return Restaurant.findOne({ _id, userId })
   .lean()
   .then(restaurant => res.render('show', { restaurant }))
   .catch(error => console.log(error))

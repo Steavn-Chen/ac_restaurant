@@ -7,7 +7,7 @@
 
 ## 功能表單
 
-  ### <1.0 版>
+### <1.0 版>
 
 - 透過餐廳名稱或類別搜尋
 - 顥示餐廳詳細資料包括類別、地址、電話、評、分圖片等資訊。
@@ -15,6 +15,16 @@
   ### <2.0 版>
 
 - 針對 CRUD 的功能，可以新增一筆資料，也可以刪除、修改。
+
+  ### <3.0 版>
+
+- 網站設為會員制，使用者必需先註冊才可以使用。
+
+- 使用者可以透過第三方 FB 註冊。
+
+- 增加按紐換餐廳資料為卡片或者為清單模式。
+
+- 使用者透過排序按紐，將資料用類別，評分，名稱來排序所有的資料。
 
 ## 啓動方式
 
@@ -26,15 +36,15 @@ https://github.com/Steavn-Chen/test_retaurant
 
 - 安裝 npm
 
-npm install
+  npm install
 
-- 透過 nodemon 啓動專案
+- 啓動專案
 
-nodemon app.js
+npm run dev
 
 - 若終端機出顥示出以下字串，表示成功。
 
-Express is running on http://locahost:3000
+Express is running on Express is running on http://locahost:3000
 
 出現 mongodb is connected! ，代表 mongodb 資料庫連接成功
 
@@ -47,3 +57,12 @@ Express is running on http://locahost:3000
 - Express -4.17.1
 - Express-Handlebars-5.3.3
 - mongoose 5.12.9
+
+## 使用的套件
+
+- passport
+- passport-facebook
+- passport-local
+- bcryptjs
+- express-session
+- express-handlebars

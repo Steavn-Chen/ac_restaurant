@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
      Restaurant.find({ $or: [{ name: { $regex: `${keyword}`, $options: 'i' }, userId }, { category: { $regex: `${keyword}`, $options: 'i' }, userId }] })
   .lean()
   .then(restaurants => {
-    if (restaurants.length) return res.render('index', { restaurants, keyword }) 
+    if (restaurants.length) return res.render('index', { restaurants, keyword })
     return res.render('searchOut', { keyword })
   })
   .catch(error => console.log(error))
