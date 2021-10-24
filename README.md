@@ -4,10 +4,8 @@
 並且點擊餐廳圖片能看到各餐廳的詳細資訊。
 
 ![restaurant-image](https://github.com/Steavn-Chen/AC_Restaurant/blob/main/%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AEA1.PNG)
-
-
-
-
+&emsp;
+&emsp;
 ![restaurant-image](https://github.com/Steavn-Chen/AC_Restaurant/blob/main/%E9%80%B2%E5%85%A5%E9%A0%81%E9%9D%A2.PNG)
 
 ## 功能表單
