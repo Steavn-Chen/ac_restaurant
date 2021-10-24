@@ -24,7 +24,7 @@
             <label for="password">Password : </label>
             <input type="password" name="password" id="password" class="form-control register-formControl"
               placeholder="Enter Password" value="{{password}}" minlength="8" maxlength="12" 
-              onkeyup="value=value.replace(/[\W]/g,'')" 
+              {{!-- onkeyup="value=value.replace(/[\W]/g,'')"  --}}
               {{!-- required --}}
               />
           </div>
@@ -33,7 +33,7 @@
             <input type="password" name="confirmPassword" id="confirmPassword" class="form-control register-formControl"
               placeholder="Enter confirmPassword" value="{{confirmPassword}}" 
                minlength="8" maxlength="12"
-              onkeyup="value=value.replace(/[\W]/g,'')" 
+              {{!-- onkeyup="value=value.replace(/[\W]/g,'')"  --}}
               {{!-- required --}}
               />
              {{!-- pattern="^([a-zA-Z]+\d+|\d+[a-zA-Z]+)[a-zA-Z0-9]*$"/> --}}

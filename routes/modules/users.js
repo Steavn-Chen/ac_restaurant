@@ -21,7 +21,7 @@ router.get('/register', (req, res) => {
 router.post('/register', (req, res) => {
   const { name, email, password, confirmPassword } = req.body
   const errors = []
-    if ( !email || !password || !confirmPassword) {
+    if (!email || !password || !confirmPassword) {
       errors.push({ message: '除了名字其他欄位都是必填的。' })
     }
     if (confirmPassword !== password) {
@@ -38,9 +38,9 @@ router.post('/register', (req, res) => {
     }
   User.findOne({ email })
   .lean()
-  .then(user => { 
+  .then(user => {
     if (user) {
-      errors.push({ message: "此帳號己經註冊過了!"})
+      errors.push({ message: '此帳號己經註冊過了!' })
       return res.render('register', { errors, name, email, password, confirmPassword })
     }
     bcrypt
@@ -49,7 +49,7 @@ router.post('/register', (req, res) => {
       .then(hash => User.create({
         name,
         email,
-        password:hash
+        password: hash
       }))
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))

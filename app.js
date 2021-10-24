@@ -38,11 +38,12 @@ app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg')
   res.locals.warning_msg = req.flash('warning_msg')
   res.locals.loginCheck_msg = req.flash('loginCheck_msg')
+  res.locals.editCheck_msg = req.flash('editCheck_msg')
   next()
 })
 
 app.use(routes)
 
 app.listen(port, () => {
-  console.log(`Express is running on http://locahost:${port}`);
+  console.log(`Express is running on http://localhost:${port}`);
 });

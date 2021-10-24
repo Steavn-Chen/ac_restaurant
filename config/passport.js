@@ -19,7 +19,7 @@ module.exports = app => {
       }
       return bcrypt.compare(password, user.password).then(isMatch => {
         if (!isMatch) {
-          return done(null, false, req.flash('loginCheck_msg', '密碼與確認密碼不相符'))
+          return done(null, false, req.flash('loginCheck_msg', '輸入的密碼有錯，請輸入正確的密碼'))
         }
         return done(null, user)
       }) 

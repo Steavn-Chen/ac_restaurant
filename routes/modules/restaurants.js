@@ -40,7 +40,10 @@ router.put('/:restaurant_id', (req, res) => {
   .then(restaurant => {
       Object.assign(restaurant, body).save()
   })
-  .then(() => res.redirect(`/restaurants/${_id}/edit`))
+  .then(() => {
+    req.flash('editCheck_msg', '你己經完成資料修改。')
+    res.redirect(`/restaurants/${_id}/edit`)
+  })
   .catch(error => console.log(error))
 })
 
