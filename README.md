@@ -28,7 +28,9 @@
 ## 遠端 heroku
 
 https://young-springs-67514.herokuapp.com
-
+## 測試帳號
+    user1@example.com/12345678
+    user2@example.com/12345678
 ## 啓動方式
 
 - 將專案 clone 到本地端
