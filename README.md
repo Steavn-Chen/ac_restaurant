@@ -25,12 +25,15 @@
 - 增加按紐換餐廳資料為卡片或者為清單模式。
 
 - 使用者透過排序按紐，將資料用類別，評分，名稱來排序所有的資料。
+## 遠端 heroku
+
+https://young-springs-67514.herokuapp.com
 
 ## 啓動方式
 
 - 將專案 clone 到本地端
 
-https://github.com/Steavn-Chen/test_retaurant
+https://github.com/Steavn-Chen/ac_restaurant
 
 - 進入到專案資料夾
 
