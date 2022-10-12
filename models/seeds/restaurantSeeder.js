@@ -19,7 +19,6 @@ const SEED_USER = [
 ]
 
 db.once('open', () => {
-  console.log('mongodb is connected!') 
   SEED_USER.forEach((item, index) => {
     bcrypt
     .genSalt(10)
@@ -35,7 +34,7 @@ db.once('open', () => {
       })))
     }) 
     .then(() => {
-    console.log('done')
+    console.log('Seeder is done.')
      process.exit()
    })
   })

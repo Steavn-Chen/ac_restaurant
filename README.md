@@ -52,20 +52,26 @@ Express is running on Express is running on http://locahost:3000
 出現 mongodb is connected! ，代表 mongodb 資料庫連接成功
 
 - 在終端機輸入 npm run seed
-  看到 mongodb is connected! done! 種子資料建立成功
+  看到 Seeder is done. 種子資料建立成功
 
 ## 開發環境
 
-- Node.js -v10.15.0
-- Express -4.17.1
-- Express-Handlebars-5.3.3
+- Node.js v14.15.0
+- express 4.17.1
+- express-handlebars 5.3.3
 - mongoose 5.12.9
 
 ## 使用的套件
 
-- passport
-- passport-facebook
-- passport-local
-- bcryptjs
-- express-session
-- express-handlebars
+- passport 0.5.0
+- passport-facebook 3.0.0
+- passport-local 1.0.0
+- passport-github-oauth20 1.0.4
+- passport-google-oauth20 2.0.0
+- bcryptjs 2.4.3
+- method-override 3.0.0
+- connect-flash 0.1.1
+- express-session 1.17.2
+- body-parser 1.19.0
+- dotenv 10.0.0
+- mongoose-find-or-create 1.3.1
