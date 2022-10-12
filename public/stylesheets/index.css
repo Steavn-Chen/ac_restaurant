@@ -249,28 +249,28 @@ header {
   margin-top: 13px;
 }
 
-.item-right, .list-right {
+.item-right {
   display: flex;
-  padding: 10px;
   align-items: center;
 }
 
-.chang .fa-list {
-  margin-right: 5px;
+.chang .item-right .chang-form {
+  margin: 0 auto;
 }
-
-.chang .fa-th.fa-th {
-  margin-right: 15px;
-}
-
 .chang .fa-th.fa-th,
 .chang .fa-list {
   color: #f0b88a;
+  background-color: rgb(253, 242, 227);
+  border: none;
 }
-
+#displayMode-listBtn, #displayMode-cardBtn {
+  box-shadow: none;
+  font-size: 18px;
+}
 .chang .fa-th:hover,
 .chang .fa-list:hover {
   color: #f77308;
+  border: none;
 }
 
 #dropdownMenuLink {

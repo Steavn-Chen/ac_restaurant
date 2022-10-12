@@ -16,7 +16,6 @@
     </div>
   </div>
 </div>
-
 <!-- restaurant list -->
 <div class="container mt-5">
   <div class="chang changItem d-flex justify-content-between align-item-center">
@@ -24,9 +23,16 @@
       <a href="/restaurants/new"><button id="navbar-searchBtn" class="btn"><i class="fas fa-plus-circle"></i> Add
           Restaurant</button></a>
     </div>
-    <div class="item-right " >
-      <a href="/"><i class="fas fa-th fa-2x"></i></a>
-      <a href="/list"><i class="fas fa-list fa-2x"></i></a>
+    <div class="item-right ">
+      <form action="/" method="post" class="chang-form">
+        {{#ifCond displayMode 'card'}}
+        <input type="text" name="displayMode" value="list" hidden>
+        <button type="submit" class="btn" id="displayMode-listBtn"><i class="fas fa-list fa-2x"></i></button>
+        {{else}}
+        <input type="text" name="displayMode" value="" hidden >
+        <button type="submit" class="btn"id="displayMode-cardBtn"><i class="fas fa-th fa-2x"></i></button>
+        {{/ifCond}}
+      </form>
       <div class="dropdown ml-2">
         <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -43,10 +49,12 @@
       </div>
     </div>
   </div>
+  {{!-- interFaceMode list --}}
+  {{#ifCond displayMode 'card'}}
   <div class="row">
     <div class=" col-md-10 col-12 mx-auto">
       <div class="card-columns">
-        {{#each restaurants}}
+        {{#each ../restaurants}}
         <div class="card mb-3 indexCard">
           <a href="/restaurants/{{this._id}}" class="text-secondary">
             <div class="inner">
@@ -60,32 +68,58 @@
             <i class="fas fa-utensils pr-2"></i>
             {{this.category}}
           </div>
-
           <span class="badge badge-pill badge-danger font-weight-normal">
             {{this.rating}}
             <i class="fas fa-star fa-xs"></i>
           </span>
-
         </div>
         <div class="card-footer text-muted ">
           <a href="/restaurants/{{ this._id }}" id="index-fileBtn" class="index-aBtn"><i class="far fa-file-alt "></i>
             file</a>
-
           <form action="/restaurants/{{ this._id }}/edit" method="GET" class="index-FormBtn">
-            <button type="submit" id="index-editBtn" class="fa"><i class="far fa-edit" ></i></button>
+            <button type="submit" id="index-editBtn" class="fa"><i class="far fa-edit"></i></button>
           </form>
-
           <form action="/restaurants/{{ this._id }}?_method=DELETE" method="POST" class="index-FormBtn">
             <button type="submit" id="index-deleteBtn"><i class="fas fa-trash"></i></button>
           </form>
-
         </div>
       </div>
       {{/each}}
     </div>
   </div>
+  {{else}}
+  {{!-- interFaceMode list --}}
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr class="listThadValue">
+        <th class="listThead">餐廳名稱</th>
+        <th class="listThead">餐廳類型</th>
+        <th class="listThead">餐廳評比</th>
+        <th class="listThead">各種方式</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each ../restaurants}}
+      <tr class="listTbody">
+        <td class="listTbodyValue">{{this.name}}</td>
+        <td class="listTbodyValue">{{this.category}}</td>
+        <td class="listTbodyValue">{{this.rating}}</td>
+        <td>
+          <a href="/restaurants/{{this._id}}" id="index-fileBtn" class="index-aBtn"><i class="far fa-file-alt"></i>
+            file</a>
+          <form action="/restaurants/{{this._id}}/edit" method="GET" class="index-FormBtn">
+            <button type="submit" class=" btn-edit" id="index-editBtn" class="fa"><i class="far fa-edit"></i></button>
+          </form>
+          <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST" class="index-FormBtn">
+            <button type="submit" class=" btn-delete" id="index-deleteBtn"><i class="fas fa-trash"></i></button>
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </div>
-
+{{/ifCond}}
 <div class="footer">
   <div class="foot-info">
     <img src="/pngtree-creative-abstract-3d-media-play-button-vector-logo-design-png-image_3732773.png"
@@ -93,5 +127,3 @@
     web designer : Steavn Chen
   </div>
 </div>
-
-

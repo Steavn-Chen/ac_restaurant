@@ -19,11 +19,11 @@ router.get('/list/:type/:method', (req, res) => {
   const { type, method } = req.params
   const result = { [type]: method }
   Restaurant.find({ userId })
-  .lean()
-  .sort(result)
-  // .sort({ [type]: method})
-  .then(restaurants => res.render('list', { restaurants }))
-  .catch(error => console.log(error))
+    .lean()
+    .sort(result)
+    // .sort({ [type]: method})
+    .then(restaurants => res.render('list', { restaurants }))
+    .catch(error => console.log(error))
 })
 
 module.exports = router
