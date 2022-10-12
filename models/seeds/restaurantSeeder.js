@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs')
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-const resData = require('../../jsonData/restaurant.json')
+const resData = require('./restaurant.json')
 const db = require('../../config/mongoose')
 const User = require('../user')
 const Restaurant = require('../restaurant')

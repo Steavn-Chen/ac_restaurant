@@ -1,6 +1,8 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const FacebookStrategy = require('passport-facebook').Strategy
+const GoogleStrategy = require('passport-google-oauth20').Strategy
+const GitHubStrategy = require('passport-github-oauth20').Strategy
 const User = require('../models/user')
 const bcrypt = require('bcryptjs')
 
@@ -27,6 +29,59 @@ module.exports = app => {
      .catch(err => done(err, false))
   }))
 }
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: process.env.GOOGLE_CLIENT_CALLBACK,
+      profileFields: ['displayName', 'email']
+    },
+    function (accessToken, refreshToken, profile, done) {
+      const { name, email } = profile._json
+      const randomPassword = Math.random().toString(36).slice(-10)
+      bcrypt
+        .genSalt(10)
+        .then((salt) => bcrypt.hash(randomPassword, salt))
+        .then((hash) => {
+          return User.findOrCreate(
+            { email },
+            { email, name, password: hash },
+            (err, user) => {
+              return done(err, user)
+            }
+          )
+        })
+        .catch((err) => done(err, false))
+    }
+  )
+)
+passport.use(
+  new GitHubStrategy(
+    {
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      callbackURL: process.env.GITHUB_CLIENT_CALLBACK,
+    },
+    function (accessToken, refreshToken, profile, done) {
+      const randomPassword = Math.random().toString(36).slice(-8)
+      const { login, emails } = profile._json
+      bcrypt
+        .genSalt(10)
+        .then((salt) => bcrypt.hash(randomPassword, salt))
+        .then((hash) => {
+          User.findOrCreate(
+            { email: emails[0].value },
+            { email: emails[0].value, name: login, password: hash },
+            (err, user) => {
+              return done(err, user)
+            }
+          )
+        })
+    }
+  )
+)
 
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_ID,
